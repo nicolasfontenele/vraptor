@@ -52,13 +52,10 @@ public class MySQLProductBackendTest {
         Product toAdd = createDefaultProduct();
         
         String productName = toAdd.getName();
-        
         backend.create(toAdd);
         
         Product reloaded = (Product) session.get(Product.class, 1L);
         assertEquals(productName, reloaded.getName());
-        
-        
     }
     
     

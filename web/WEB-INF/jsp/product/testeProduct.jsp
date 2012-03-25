@@ -1,6 +1,6 @@
 <%-- 
-    Document   : testeInt
-    Created on : 25/03/2012, 17:05:44
+    Document   : testeProduct
+    Created on : 25/03/2012, 17:53:21
     Author     : nicolas
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1> testando inteiro: ${integer}</h1>
+        <h1>${product.name}</h1>
     </body>
 </html>

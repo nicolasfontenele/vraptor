@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class Product implements Serializable {
     @Id @GeneratedValue
     private Long id;
-
+    
     private String name;
     private String description;
     private Double price;
@@ -57,6 +57,7 @@ public class Product implements Serializable {
     
     public String testeResource()
     {
+        System.out.println("teste resource");
         return "primeiro teste usando jsp e vraptor";
     }
     

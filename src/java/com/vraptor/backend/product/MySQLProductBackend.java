@@ -24,8 +24,6 @@ public class MySQLProductBackend  implements ProductBackend {
         session = factory.openSession();
     
     }
-
-    
     
     @Override
     public Product update(Product object) throws BackendException {
