@@ -29,7 +29,12 @@ public class MySQLProductBackend  implements ProductBackend {
     
     @Override
     public Product update(Product object) throws BackendException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+        Transaction tx = session.beginTransaction();
+        Product updatedOne = (Product) session.merge(object);
+        tx.commit();            
+        return updatedOne;
+        
     }
 
     @Override
@@ -43,12 +48,19 @@ public class MySQLProductBackend  implements ProductBackend {
 
     @Override
     public void remove(Product object) throws BackendException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Transaction tx = session.beginTransaction();
+        session.delete(object);
+        tx.commit();
+        
     }
 
     @Override
     public Product read(Long id) throws BackendException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Transaction tx = session.beginTransaction();
+        Product reloaded = (Product) session.get(Product.class, id);
+        tx.commit();
+        return reloaded;
+        
     }
     
     
