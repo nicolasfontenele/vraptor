@@ -117,7 +117,7 @@ public class MySQLProductBackendTest {
     @After
     public void tearDown() {
         
-    
+    //drop database.
         
         
     }
