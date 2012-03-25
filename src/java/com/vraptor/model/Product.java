@@ -1,6 +1,9 @@
 package com.vraptor.model;
 
+import br.com.caelum.vraptor.Resource;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +12,7 @@ import javax.persistence.Id;
  *
  * @author nicolas
  */
+@Resource
 @Entity
 public class Product implements Serializable {
     @Id @GeneratedValue
@@ -50,5 +54,36 @@ public class Product implements Serializable {
         this.id = id;
     }
 
+    
+    public String testeResource()
+    {
+        return "primeiro teste usando jsp e vraptor";
+    }
+    
+    public List<String> testeList()
+    {
+        List<String> names = new ArrayList<String>();
+        names.add("nome1");
+        names.add("nome2");
+        names.add("nome3");
+        names.add("nome4");
+        
+        return names;
+    }
+    
+    public int testeInt()            
+    {
+        return 10;
+    }
+    
+    public Product testeProduct()
+    {
+        Product product = new Product();
+        product.setDescription("descricao");
+        product.setName("nome");
+        product.setPrice(10.0);
+        return product;
+    }
+    
     
 }
