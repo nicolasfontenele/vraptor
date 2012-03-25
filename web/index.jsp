@@ -12,6 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+
+        <form action="" method="GET">
+            Produto nome: 
+            <input type="text" name="name">
+            <br>
+            Descricao: 
+            <input type="text" name="description">
+        </form>
+        
     </body>
 </html>

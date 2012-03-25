@@ -1,6 +1,7 @@
 package com.vraptor.controller;
 
 import br.com.caelum.vraptor.Resource;
+import com.vraptor.backend.product.MySQLProductBackend;
 
 /**
  *
@@ -9,6 +10,7 @@ import br.com.caelum.vraptor.Resource;
 
 @Resource
 public class ProductController {
+    
     
     
     

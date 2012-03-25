@@ -72,7 +72,7 @@ public class Product implements Serializable {
         return names;
     }
     
-    public int testeInt()            
+    public Integer testeInt()            
     {
         return 10;
     }
