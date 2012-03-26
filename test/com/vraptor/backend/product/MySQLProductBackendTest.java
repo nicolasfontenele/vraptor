@@ -42,10 +42,18 @@ public class MySQLProductBackendTest {
         forTest = new Properties();
         //we need mode create in the tests!
         forTest.put("hibernate.hbm2ddl.auto", "create");
-        
-        conf.mergeProperties(forTest);
-        
+        forTest.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        forTest.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+        forTest.put("hibernate.connection.url", "jdbc:mysql://localhost:3306/hibernate");
+        forTest.put("hibernate.connection.username", "root");
+        forTest.put("show_sql", "true");
+        forTest.put("format_sql", "true");
+   
+
+       
         conf.configure();
+        conf.setProperties(forTest);
+        
         factory = conf.buildSessionFactory();
         session = factory.openSession();
     }
