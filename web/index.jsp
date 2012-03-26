@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <form action="" method="GET">
+        <form action="web/jsp/productcontroller/" method="GET">
             Produto nome: 
             <input type="text" name="name">
             <br>

@@ -1,5 +1,8 @@
 package com.vraptor.backend.product;
 
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import com.vraptor.model.Product;
@@ -99,6 +102,38 @@ public class MySQLProductBackendTest {
         assertEquals(updatedName, backend.read(1L).getName());
     
     }
+    
+    @Test
+    public void testThatProductsCreatedCanBeListedOnMysqlByHibernateBackend() throws BackendException
+    {
+        Product product1 = createDefaultProduct();
+        Product product2 = createDefaultProduct();
+        Product product3 = createDefaultProduct();
+        
+        backend.create(product1);
+        backend.create(product2);
+        backend.create(product3);
+        
+        List<Product> reloaded = backend.list();
+    
+        assertEquals(3,reloaded.size());
+        
+    }
+    
+    
+    @Test
+    public void testBackendExceptionOnNullPointer()
+    {
+        try {
+            backend.validate(null);
+            fail("should throw exception");
+        } catch (BackendException ex) {
+           assertTrue( ex.getCause() instanceof NullPointerException);
+        }
+        
+        
+    }
+    
  
     protected Product createDefaultProduct()
     {
@@ -111,10 +146,12 @@ public class MySQLProductBackendTest {
         return defaultOne;
     }
     
+    
+    
     @After
     public void tearDown() {
         
-    //drop database.
+    //drop database - look some code to delete it.
         
         
     }
