@@ -13,13 +13,7 @@
     </head>
     <body>
 
-        <form action="web/jsp/productcontroller/" method="GET">
-            Produto nome: 
-            <input type="text" name="name">
-            <br>
-            Descricao: 
-            <input type="text" name="description">
-        </form>
+        <h1> nothing to do here. pages on jsp directory. </h1>
         
     </body>
 </html>

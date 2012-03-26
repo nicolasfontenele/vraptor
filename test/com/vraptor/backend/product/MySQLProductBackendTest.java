@@ -40,6 +40,7 @@ public class MySQLProductBackendTest {
         conf = new AnnotationConfiguration();
         
         forTest = new Properties();
+        //we need mode create in the tests!
         forTest.put("hibernate.hbm2ddl.auto", "create");
         
         conf.mergeProperties(forTest);
